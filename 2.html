@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada Pesan Buat Kamu!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden; /* Mencegah layar bisa di-scroll saat tombol lari */
+        }
+        h1 { color: #ff4d4d; }
+        .btn-container { margin-top: 20px; }
+        button {
+            padding: 10px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.2s; /* Memberi efek transisi saat tombol bergerak */
+        }
+        #btnYes { background-color: #4CAF50; color: white; font-weight: bold; }
+        #btnNo { background-color: #f44336; color: white; font-weight: bold; position: relative; }
+    </style>
+</head>
+<body>
+
+    <h1>hai, kamu mau gak jadi teman ak</h1>
+    
+    <div class="btn-container">
+        <button id="btnYes" onclick="alert('Yeay! Makasih ya')">Mau!</button>
+        <button id="btnNo" onmouseover="pindah()" onclick="pindah()">Gak</button>
+    </div>
+
+    <script>
+        function pindah() {
+            var btn = document.getElementById('btnNo');
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            btn.style.position = 'absolute';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+    </script>
+
+</body>
+</html>
